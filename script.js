@@ -12,3 +12,6 @@ function addItem(item={name:'',qty:1,unit:'шт.',price:0}){state.items.push({..
 ['number','date','from','to'].forEach(key=>{$(key).value=state[key];$(key).addEventListener('input',()=>{state[key]=$(key).value;recalc()})});$('add').addEventListener('click',()=>addItem());renderItems();
 
 ['discount','vat','currency'].forEach(key=>{$(key).value=state[key];$(key).addEventListener('input',()=>{state[key]=key==='currency'?$(key).value:Math.min(100,numeric($(key).value));recalc()})});
+
+function preparePrint(){const date=/^\d{4}-\d{2}-\d{2}$/.test(state.date)?state.date.split('-').reverse().join('.'):state.date;$('document-title').textContent='Смета № '+state.number+' от '+date;document.querySelectorAll('.print-value').forEach(el=>el.remove());document.querySelectorAll('.document input,.document select').forEach(input=>{if(input.closest('.adjustments')||input.closest('.document-heading'))return;const span=document.createElement('span');span.className='print-value';span.textContent=input.tagName==='SELECT'?input.options[input.selectedIndex].text:input.value;input.after(span)});document.title='Смета '+state.number;recalc()}
+window.addEventListener('beforeprint',preparePrint);$('print').addEventListener('click',()=>{preparePrint();window.print()});
