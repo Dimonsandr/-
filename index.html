@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Смета за 5 минут</title><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script></head><body>
+<header class="app-header"><div class="brand">СМЕТА <span>/ за 5 минут</span></div><span class="private">Ваши данные остаются в браузере</span></header>
+<main><section class="intro"><p class="eyebrow">МЕНЬШЕ РУТИНЫ, БОЛЬШЕ ДЕЛА</p><h1>От задачи до готовой сметы.</h1><p>Добавьте работы или товары. Итог пересчитается сам.</p></section>
+<article class="document"><div class="document-heading"><div><p class="eyebrow">ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</p><h2 id="document-title">Смета</h2></div><label class="number">Номер<input id="number" value="001" maxlength="50"></label><label>Дата<input id="date" type="date"></label></div>
+<section class="parties"><label>От кого<input id="from" placeholder="Компания или имя" maxlength="300"></label><label>Для кого<input id="to" placeholder="Клиент или организация" maxlength="300"></label></section>
+<div class="table-scroll"><table><thead><tr><th>Наименование</th><th>Кол-во</th><th>Ед.</th><th>Цена, <span data-currency>₸</span></th><th>Сумма, <span data-currency>₸</span></th><th class="actions-col"></th></tr></thead><tbody id="items"></tbody></table></div>
+<div class="row-controls"><button id="add" class="secondary">+ Добавить позицию</button></div>
+<section class="totals-area"><div class="adjustments" id="adjustments"></div><div class="totals"><div><span>Сумма позиций</span><strong id="subtotal"></strong></div><div class="grand-total"><span>Итого к оплате</span><strong id="total"></strong></div></div></section>
+<div class="signature">Подпись ____________________</div></article>
+<section class="toolbar" id="toolbar"></section><p id="status" role="status" aria-live="polite"></p><footer>Смета за 5 минут · Все расчёты под вашим контролем</footer></main></body></html>
