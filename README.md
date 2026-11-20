@@ -27,12 +27,19 @@
 
 ## GitHub
 
-Публикация ещё не выполнена: требуется подключение аккаунта. После создания пустого публичного репозитория smeta без README и лицензии:
+Репозиторий: https://github.com/Dimonsandr/-
 
-    git remote add origin https://github.com/ВАШ_ЛОГИН/smeta.git
-    git push -u origin main
+Файлы и последовательность шагов опубликованы через подключение GitHub. Поэтому SHA коммитов на GitHub отличаются от исходных локальных SHA. Исходная история сохранена в archive/smeta-history.bundle.
 
-Не вводите ВАШ_ЛОГИН буквально: подставьте свой логин. Затем Settings → Pages → Deploy from a branch → main → / (root) → Save. Адрес выдаст GitHub после публикации.
+Чтобы продолжить работу с опубликованной веткой, клонируйте репозиторий в новую папку:
+
+    git clone https://github.com/Dimonsandr/-.git smeta-github
+
+Для восстановления именно исходной локальной истории из архива:
+
+    git clone archive/smeta-history.bundle smeta-original
+
+GitHub Pages пока не включён. Бонус из урока: Settings → Pages → Deploy from a branch → main → / (root) → Save. Дождитесь адреса, который покажет GitHub.
 
 ## Материалы сдачи
 
